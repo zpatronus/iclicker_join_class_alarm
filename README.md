@@ -46,8 +46,14 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
    - Tampermonkey will prompt you to install the test script. Click **Install**.
 
 4. **Use the script**:
-   - Once installed, the main script will automatically run on the iClicker student page (`https://student.iclicker.com/*`).
+
+   - Enter the course page. You should see this:
+
+     ![image-20240925172305852](./README.assets/image-20240925172305852.png)
+
+   - Once installed, the main script will automatically run on the that page.
    - It will check for the keyword every second, and if found, will stop refreshing the page and trigger an alarm and notification.
+   - You should turn it off when you are doing quiz, or it will refresh the page.
 
 5. **Audio Autoplay Restriction**:
    - Due to browser restrictions on autoplay, the alarm may not play automatically.
