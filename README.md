@@ -37,7 +37,6 @@ This is a Tampermonkey userscript designed to automatically detect when the inst
 
 4. **Audio Autoplay Restriction**:
    - Due to browser restrictions on autoplay, the alarm may not play automatically.
-   - If autoplay fails, a message will be logged in the browser console (`F12` > "Console").
 
 ## License
 
