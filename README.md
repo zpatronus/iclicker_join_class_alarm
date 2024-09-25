@@ -20,10 +20,10 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 ## How to Install and Use with Tampermonkey
 
 1. **Install the Tampermonkey extension**:
-   - If you haven't installed Tampermonkey yet, you can download it from the official Tampermonkey website:
-     - [Tampermonkey for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+   - If you haven't installed Tampermonkey yet, you can download it from [the official Tampermonkey website](https://www.tampermonkey.net/) or:
+     - [Tampermonkey for Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
      - [Tampermonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
-     - [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/ldjamemegdicckonechpmclldcipjlld)
+     - [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd)
      - [Tampermonkey for Safari](https://apps.apple.com/us/app/tampermonkey/id1482490089)
 
 2. **Install the main script**:
