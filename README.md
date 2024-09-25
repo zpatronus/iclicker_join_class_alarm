@@ -1,13 +1,13 @@
 # iClicker Class Join Alarm
 
-This is a Tampermonkey userscript designed to automatically detect when the instructor starts taking attendance on the iClicker student page by identifying the keyword ("course-join-container expanded") in the HTML source. When the keyword is found, the script plays an alarm and sends a notification. If the keyword is not found after 15 seconds, the page will automatically refresh to ensure you don't miss any updates.
+This is a Tampermonkey userscript designed to automatically detect when the instructor starts taking attendance on the iClicker student page by identifying the keyword ("course-join-container expanded") in the HTML source. When the keyword is found, the script plays an alarm and sends a notification. If the keyword is not found after 30 seconds, the page will automatically refresh to ensure you don't miss any updates.
 
 ## Features
 
 - Automatically checks the page every second for the keyword indicating attendance has started.
 - Plays an alarm and shows a notification when the keyword is found.
 - Stops the page from refreshing once the keyword is detected.
-- If the keyword isn't found within 15 seconds, the page will refresh to keep it up-to-date.
+- If the keyword isn't found within 30 seconds, the page will refresh to keep it up-to-date.
 
 ## Test Script
 
