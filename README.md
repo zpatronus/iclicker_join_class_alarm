@@ -23,10 +23,10 @@ This is a Tampermonkey userscript designed to automatically detect when the inst
      - [Tampermonkey for Safari](https://apps.apple.com/us/app/tampermonkey/id1482490089)
   
 2. **Install the script**:
-   - Click [here to install the script](https://github.com/zpatronus/iclicker_join_class_alarm/raw/main/iClickerCourseJoinAlarm.user.js) or copy and paste the following URL into your browser:
+   - Click [here to install the script](https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm.user.js) or copy and paste the following URL into your browser:
 
      ```
-     https://github.com/zpatronus/iclicker_join_class_alarm/raw/main/iClickerCourseJoinAlarm.user.js
+     https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm.user.js
      ```
 
    - Tampermonkey will prompt you to install the script. Click **Install**.
