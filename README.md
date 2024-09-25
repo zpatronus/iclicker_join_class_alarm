@@ -52,6 +52,16 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 5. **Audio Autoplay Restriction**:
    - Due to browser restrictions on autoplay, the alarm may not play automatically.
 
+## Compatibility
+
+The following combinations have been tested:
+
+- Ubuntu 20.04
+  - Chrome
+  - Edge
+- Windows
+  - Edge
+
 ## License
 
 This project is licensed under the MIT License.
