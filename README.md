@@ -16,6 +16,7 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 ## Known Limitations
 
 - Due to modern browser restrictions, the alarm **may not play automatically**.
+- **Focus mode or similar settings must be turned off to receive notifications**.
 
 ## How to Install and Use with Tampermonkey
 
