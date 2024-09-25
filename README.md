@@ -9,6 +9,10 @@ This is a Tampermonkey userscript designed to automatically detect when the inst
 - Stops the page from refreshing once the keyword is detected.
 - If the keyword isn't found within 15 seconds, the page will refresh to keep it up-to-date.
 
+## Test Script
+
+For testing purposes, a separate script named `iclicker_join_class_alarm_test.user.js` has been added. This script will trigger the alarm regardless of whether attendance has started or not, allowing you to test the functionality of the alarm and notification.
+
 ## Known Limitations
 
 - Due to modern browser restrictions, the alarm **may not play automatically**.
@@ -21,8 +25,8 @@ This is a Tampermonkey userscript designed to automatically detect when the inst
      - [Tampermonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
      - [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/ldjamemegdicckonechpmclldcipjlld)
      - [Tampermonkey for Safari](https://apps.apple.com/us/app/tampermonkey/id1482490089)
-  
-2. **Install the script**:
+
+2. **Install the main script**:
    - Click [here to install the script](https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm.user.js) or copy and paste the following URL into your browser:
 
      ```
@@ -31,11 +35,20 @@ This is a Tampermonkey userscript designed to automatically detect when the inst
 
    - Tampermonkey will prompt you to install the script. Click **Install**.
 
-3. **Use the script**:
-   - Once installed, the script will automatically run on the iClicker student page (`https://student.iclicker.com/*`).
+3. **Install the test script** (optional):
+   - Click [here to install the test script](https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm_test.user.js) or copy and paste the following URL into your browser:
+
+     ```
+     https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm_test.user.js
+     ```
+
+   - Tampermonkey will prompt you to install the test script. Click **Install**.
+
+4. **Use the script**:
+   - Once installed, the main script will automatically run on the iClicker student page (`https://student.iclicker.com/*`).
    - It will check for the keyword every second, and if found, will stop refreshing the page and trigger an alarm and notification.
 
-4. **Audio Autoplay Restriction**:
+5. **Audio Autoplay Restriction**:
    - Due to browser restrictions on autoplay, the alarm may not play automatically.
 
 ## License

@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         iClicker Class Join Alarm
+// @name         iClicker Class Join Alarm Test
 // @namespace    http://tampermonkey.net/
 // @version      1.3
-// @description  Find the keyword "course-join-container expanded" in iClicker source HTML, play an alarm, and show notification when found. Refresh page if not found after 15s.
+// @description  Find the keyword "course-join-container" in iClicker source HTML, play an alarm, and show notification when found. Refresh page if not found after 15s.
 // @author       zPatronus
 // @match        https://student.iclicker.com/*
 // @grant        GM_notification
@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  const keyword = "course-join-container join";
+  const keyword = "course-join-container";
   const checkInterval = 1000; // 1 second check interval
   const refreshInterval = 15000; // 15 seconds refresh interval
   let elapsed = 0;
