@@ -17,8 +17,8 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 
 ## Known Limitations
 
-- Due to modern browser restrictions, the alarm **may not play automatically**.
-  - A possible way to bypass this restriction is to: 1. Enter the course page; 2. Click "Class History"; 3. Click "Overview". By doing so, the browser records your interaction, thus allowing autoplay.
+- Due to modern browser restrictions, the alarm **may not play automatically**. It's a browser security feature that disables video/audio autoplay without user interaction and there's nothing I can do about it.
+  - A possible way to bypass this restriction is to have some interactions first: 1. Enter the course page; 2. Click "Class History"; 3. Click "Overview". By doing so, the browser records your interaction, thus allowing autoplay.
 - **Focus mode or similar settings must be turned off to receive notifications**.
 
 ## How to Install and Use with Tampermonkey
