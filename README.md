@@ -52,7 +52,7 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 
    - Enter the course page. You should see this:
 
-     ![image-20240925172305852](./README.assets/image-20240925172305852.png)
+     ![](./README.assets/image.png)
 
    - (Optional) Click "Class History", and then click "Overview" to bypass autoplay restrictions if the alarm does not work and you want not just notifications.
    - Once installed, the main script will automatically run on that page.
@@ -73,6 +73,12 @@ The following combinations have been tested:
   - Edge
 - MacOS
   - Chrome
+
+## Changelog
+
+1.6
+
+- Add toggle to control monitor and alarm.
 
 ## License
 
