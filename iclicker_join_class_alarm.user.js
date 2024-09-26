@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         iClicker Class Join Alarm Test
+// @name         iClicker Class Join Alarm
 // @namespace    http://tampermonkey.net/
 // @version      1.6
 // @description  Find the keyword "course-join-container expanded" in iClicker source HTML, play an alarm, and show notification when found. Refresh page if not found after 30s. Includes Stop button to mute alarm and stop monitoring.
