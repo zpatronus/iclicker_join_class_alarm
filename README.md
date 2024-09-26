@@ -56,6 +56,7 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 
    - (Optional) Click "Class History", and then click "Overview" to bypass autoplay restrictions if the alarm does not work and you want not just notifications.
    - Once installed, the main script will automatically run on that page.
+   - Enable monitoring by checking "Monitor Attendance". If you are running the test script, you should expect to see the notification immediately after you check.
    - It will check for the keyword every second, and if found, will stop refreshing the page and trigger an alarm and notification.
    - You should turn it off when you are doing quiz, or it will refresh the page.
 
