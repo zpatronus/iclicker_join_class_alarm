@@ -67,6 +67,8 @@ The following combinations have been tested:
   - Edge
 - Windows
   - Edge
+- MacOS
+  - Chrome
 
 ## License
 
