@@ -16,6 +16,7 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 ## Known Limitations
 
 - Due to modern browser restrictions, the alarm **may not play automatically**.
+  - A possible way to bypass this restriction is to: 1. Enter the course page; 2. Click "Class History"; 3. Click "Overview". By doing so, the browser records your interaction, thus allowing autoplay.
 - **Focus mode or similar settings must be turned off to receive notifications**.
 
 ## How to Install and Use with Tampermonkey
@@ -36,7 +37,7 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 
    - Tampermonkey will prompt you to install the script. Click **Install**.
 
-3. **Install the test script** (optional):
+3. **Install the test script** (for test/debug only):
    - Click [here to install the test script](https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm_test.user.js) or copy and paste the following URL into your browser:
 
      ```
@@ -51,7 +52,8 @@ For testing purposes, a separate script named `iclicker_join_class_alarm_test.us
 
      ![image-20240925172305852](./README.assets/image-20240925172305852.png)
 
-   - Once installed, the main script will automatically run on the that page.
+   - (Optional) Click "Class History", and then click "Overview" to bypass autoplay restrictions if the alarm does not work and you want not just notifications.
+   - Once installed, the main script will automatically run on that page.
    - It will check for the keyword every second, and if found, will stop refreshing the page and trigger an alarm and notification.
    - You should turn it off when you are doing quiz, or it will refresh the page.
 
