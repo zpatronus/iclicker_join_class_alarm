@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         iClicker Class Join Alarm Test
 // @namespace    http://tampermonkey.net/
-// @version      1.6
+// @version      1.7
 // @description  Find the keyword "course-join-container" in iClicker source HTML, play an alarm, and show notification when found. Refresh page if not found after 30s. Includes Stop button to mute alarm and stop monitoring.
 // @author       zPatronus
 // @match        https://student.iclicker.com/*
@@ -138,11 +138,6 @@
         audio.currentTime = 0;
       }
 
-      // Stop monitoring and update the checkbox state
-      monitoringEnabled = false;
-      localStorage.setItem(localStorageKeyMonitoring, monitoringEnabled);
-      document.querySelector('input[type="checkbox"]').checked = false; // Uncheck the monitor switch
-
       // Remove the Stop button
       stopButton.remove();
     });
@@ -152,6 +147,11 @@
 
   // Stop monitoring
   function stopMonitoring () {
+    console.log('Stop monitoring')
+    // Stop monitoring and update the checkbox state
+    monitoringEnabled = false;
+    localStorage.setItem(localStorageKeyMonitoring, monitoringEnabled);
+    document.querySelector('input[type="checkbox"]').checked = false; // Uncheck the monitor switch
     clearInterval(checkIntervalId);
   }
 
@@ -160,8 +160,8 @@
     let pageSource = document.documentElement.innerHTML;
     if (pageSource.includes(keyword)) {
       if (!alarmTriggered) {
-        playAlarm();
         stopMonitoring();
+        playAlarm();
         alarmTriggered = true;
       }
     } else {
@@ -174,6 +174,10 @@
 
   // Start monitoring if enabled
   function startMonitoring () {
+    console.log('Start monitoring');
+    clearInterval(checkIntervalId);
+    alarmTriggered = false;
+    elapsed = 0;
     checkIntervalId = setInterval(checkForKeyword, checkInterval);
   }
 
