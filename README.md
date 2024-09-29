@@ -77,6 +77,10 @@ The following combinations have been tested:
 
 ## Changelog
 
+1.7
+
+- Fix toggle logic.
+
 1.6
 
 - Add toggle to control monitor and alarm.
