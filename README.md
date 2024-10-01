@@ -83,6 +83,14 @@ The following combinations have been tested:
 
 ## Changelog
 
+1.9
+
+- Use meta data to auto update
+
+1.8
+
+- Add auto update
+
 1.7
 
 - Fix toggle logic.
