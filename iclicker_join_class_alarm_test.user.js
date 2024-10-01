@@ -1,18 +1,45 @@
 // ==UserScript==
 // @name         iClicker Class Join Alarm Test
 // @namespace    http://tampermonkey.net/
-// @version      1.7
+// @version      1.8
 // @description  Find the keyword "course-join-container" in iClicker source HTML, play an alarm, and show notification when found. Refresh page if not found after 30s. Includes Stop button to mute alarm and stop monitoring.
 // @author       zPatronus
 // @match        https://student.iclicker.com/*
 // @grant        GM_notification
 // @grant        GM_openInTab
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 (function () {
   'use strict';
 
+  // Versioning variables
+  const curVersion = "1.8";
+  const versionCheckUrl = "https://raw.githubusercontent.com/zpatronus/iclicker_join_class_alarm/refs/heads/main/.latest_version.txt";
+
   const keyword = "course-join-container";
+  const latestScriptUrl = "https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm_test.user.js";
+
+  // const keyword = "course-join-container expanded";
+  // const latestScriptUrl = "https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm.user.js";
+  // Check for updates
+  function checkForUpdates () {
+    GM_xmlhttpRequest({
+      method: "GET",
+      url: versionCheckUrl,
+      onload: function (response) {
+        const latestVersion = response.responseText.trim();
+        if (curVersion !== latestVersion) {
+          if (confirm(`A new version (${latestVersion}) is available. Would you like to update?`)) {
+            GM_openInTab(latestScriptUrl, { active: true });
+          }
+        }
+      }
+    });
+  }
+  checkForUpdates();
+
+
   const checkInterval = 1000; // 1 second check interval
   const refreshInterval = 30000; // 30 seconds refresh interval
   let elapsed = 0;

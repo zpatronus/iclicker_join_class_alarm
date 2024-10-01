@@ -11,6 +11,12 @@ This is a Tampermonkey userscript designed to automatically detect when the inst
 - Stops the page from refreshing once the keyword is detected.
 - If the keyword isn't found within 30 seconds, the page will refresh to keep it up-to-date.
 
+## Version Checking
+
+The script is under **active development**, with new features and improvements being added frequently. To make sure you always have the latest and best version, the script automatically checks GitHub for updates. If a new version is available, you'll receive a prompt to update.
+
+This update check requires fetch from this Github repo, so your browser may ask for permission to allow cross-site requests. **Don't worry!** This is a standard procedure solely to retrieve the version number. Allowing access ensures you have the most up-to-date, stable, and feature-rich experience with the script.
+
 ## Test Script
 
 For testing purposes, a separate script named `iclicker_join_class_alarm_test.user.js` has been added. This script will trigger the alarm regardless of whether attendance has started or not, allowing you to test the functionality of the alarm and notification.
