@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         iClicker Class Join Alarm Test
 // @namespace    http://tampermonkey.net/
-// @version      1.9
+// @version      2.0
 // @description  Find the keyword "course-join-container" in iClicker source HTML, play an alarm, and show notification when found. Refresh page if not found after 30s. Includes Stop button to mute alarm and stop monitoring.
 // @author       zPatronus
 // @match        https://student.iclicker.com/*
@@ -16,7 +16,7 @@
   'use strict';
 
   // Versioning variables
-  const curVersion = "1.9";
+  const curVersion = "2.0";
   const versionCheckUrl = "https://raw.githubusercontent.com/zpatronus/iclicker_join_class_alarm/refs/heads/main/.latest_version.txt";
 
   const keyword = "course-join-container";
@@ -188,6 +188,10 @@
   function checkForKeyword () {
     let pageSource = document.documentElement.innerHTML;
     if (pageSource.includes(keyword)) {
+      const button = document.querySelector('.join-button');
+      if (button) {
+        button.click();
+      }
       if (!alarmTriggered) {
         stopMonitoring();
         playAlarm();
