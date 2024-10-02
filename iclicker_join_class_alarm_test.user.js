@@ -47,10 +47,6 @@
     try {
       wakeLock = await navigator.wakeLock.request('screen');
       console.log('Wake Lock is active');
-      wakeLock.addEventListener('release', () => {
-        console.log('Wake Lock was released, re-acquiring...');
-        requestWakeLock(); // Re-acquire the wake lock
-      });
     } catch (err) {
       console.error(`Wake Lock error: ${err.name}, ${err.message}`);
     }
@@ -58,6 +54,9 @@
 
   // Request Wake Lock
   requestWakeLock();
+  setInterval(() => {
+    requestWakeLock();
+  }, 20000); // 20 seconds
 
 
   const checkInterval = 1000; // 1 second check interval
