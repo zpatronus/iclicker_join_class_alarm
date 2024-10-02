@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         iClicker Class Join Alarm Test
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      2.1
 // @description  Find the keyword "course-join-container" in iClicker source HTML, play an alarm, and show notification when found. Refresh page if not found after 30s. Includes Stop button to mute alarm and stop monitoring.
 // @author       zPatronus
 // @match        https://student.iclicker.com/*
@@ -16,7 +16,7 @@
   'use strict';
 
   // Versioning variables
-  const curVersion = "2.0";
+  const curVersion = "2.1";
   const versionCheckUrl = "https://raw.githubusercontent.com/zpatronus/iclicker_join_class_alarm/refs/heads/main/.latest_version.txt";
 
   const keyword = "course-join-container";
@@ -40,6 +40,24 @@
     });
   }
   checkForUpdates();
+
+  let wakeLock = null;
+
+  async function requestWakeLock () {
+    try {
+      wakeLock = await navigator.wakeLock.request('screen');
+      console.log('Wake Lock is active');
+      wakeLock.addEventListener('release', () => {
+        console.log('Wake Lock was released, re-acquiring...');
+        requestWakeLock(); // Re-acquire the wake lock
+      });
+    } catch (err) {
+      console.error(`Wake Lock error: ${err.name}, ${err.message}`);
+    }
+  }
+
+  // Request Wake Lock
+  requestWakeLock();
 
 
   const checkInterval = 1000; // 1 second check interval
@@ -188,14 +206,19 @@
   function checkForKeyword () {
     let pageSource = document.documentElement.innerHTML;
     if (pageSource.includes(keyword)) {
-      const button = document.querySelector('.join-button');
-      if (button) {
-        button.click();
-      }
       if (!alarmTriggered) {
         stopMonitoring();
         playAlarm();
         alarmTriggered = true;
+      }
+      const button = document.querySelector('.join-button');
+      if (button) {
+        setTimeout(() => {
+          button.click();
+          console.log('button clicked');
+        }, 1000);
+      } else {
+        console.log('button not found');
       }
     } else {
       elapsed += checkInterval;
