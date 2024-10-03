@@ -1,109 +1,52 @@
 # iClicker Class Join Alarm
 
-**Disclaimer: This script is intended for study purposes, specifically to learn and practice coding and automation with Tampermonkey. It should not be used to skip classes or abuse attendance systems. Please ensure you comply with your institution's attendance policies and use responsibly.**
+**Disclaimer**: This script is for coding and automation practice with Tampermonkey. Use responsibly and comply with your institution's attendance policies.
 
-This is a Tampermonkey userscript designed to automatically detect and join the class when the instructor starts taking attendance on the iClicker student page by identifying the keyword ("course-join-container expanded") in the HTML source. When the keyword is found, the script plays an alarm and sends a notification. If the keyword is not found after 30 seconds, the page will automatically refresh to ensure you don't miss any updates.
+A Tampermonkey script to detect and auto-join iClicker classes when attendance starts, identified by the keyword "course-join-container expanded." It plays an alarm and sends a notification upon detection, refreshing every 30 seconds if not found.
 
 ## Features
 
-- Automatically checks the page every second for the keyword indicating attendance has started.
-- Plays an alarm and shows a notification when the keyword is found.
-- Stops the page from refreshing once the keyword is detected.
-- Auto join the class.
-- If the keyword isn't found within 30 seconds, the page will refresh to keep it up-to-date.
+- Checks for attendance keyword every second.
+- Plays an alarm and shows a notification when detected.
+- Stops refreshing when the keyword is found and auto joins the class.
+- Refreshes every 30 seconds to stay updated.
 
 ## Version Checking
 
-The script is under **active development**, with new features and improvements being added frequently. To make sure you always have the latest and best version, the script automatically checks GitHub for updates. If a new version is available, you'll receive a prompt to update.
-
-This update check requires fetch from this Github repo, so your browser may ask for permission to allow cross-site requests. **Don't worry!** This is a standard procedure solely to retrieve the version number. Allowing access ensures you have the most up-to-date, stable, and feature-rich experience with the script.
+The script auto-checks for updates on GitHub. Your browser may request cross-site permission for version retrieval; it's safe and ensures stability.
 
 ## Test Script
 
-For testing purposes, a separate script named `iclicker_join_class_alarm_test.user.js` has been added. This script will trigger the alarm regardless of whether attendance has started or not, allowing you to test the functionality of the alarm and notification.
+`iclicker_join_class_alarm_test.user.js` tests alarm functionality regardless of attendance status.
 
-## Known Limitations
+## Limitations
 
-- Due to modern browser restrictions, the alarm **may not play automatically**. It's a browser security feature that disables video/audio autoplay without user interaction and there's nothing I can do about it.
-  - A possible way to bypass this restriction is to have some interactions first: 1. Enter the course page; 2. Click "Class History"; 3. Click "Overview". By doing so, the browser records your interaction, thus allowing autoplay.
-- **Focus mode or similar settings must be turned off to receive notifications**.
+- Alarm may not autoplay due to browser restrictions; interact with the page first to enable.
+- Turn off focus mode to receive notifications.
 
-## How to Install and Use with Tampermonkey
+## Installation
 
-1. **Install the Tampermonkey extension**:
-   - If you haven't installed Tampermonkey yet, you can download it from [the official Tampermonkey website](https://www.tampermonkey.net/) or:
-     - [Tampermonkey for Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-     - [Tampermonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
-     - [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd)
-     - [Tampermonkey for Safari](https://apps.apple.com/us/app/tampermonkey/id1482490089)
-
-2. **Install the main script**:
-   - Click [here to install the script](https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm.user.js) or copy and paste the following URL into your browser:
-
-     ```
-     https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm.user.js
-     ```
-
-   - Tampermonkey will prompt you to install the script. Click **Install**.
-
-3. **Install the test script** (for test/debug only):
-   - Click [here to install the test script](https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm_test.user.js) or copy and paste the following URL into your browser:
-
-     ```
-     https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm_test.user.js
-     ```
-
-   - Tampermonkey will prompt you to install the test script. Click **Install**.
-
-4. **Use the script**:
-
-   - Enter the course page. You should see this:
-
-     ![](./README.assets/image.png)
-
-   - (Optional) Click "Class History", and then click "Overview" to bypass autoplay restrictions if the alarm does not work and you want not just notifications.
-   - Once installed, the main script will automatically run on that page.
-   - Enable monitoring by checking "Monitor Attendance". If you are running the test script, you should expect to see the notification immediately after you check.
-   - It will check for the keyword every second, and if found, will stop refreshing the page and trigger an alarm and notification.
-   - You should turn it off when you are doing quiz, or it will refresh the page.
-
-5. **Audio Autoplay Restriction**:
-   - Due to browser restrictions on autoplay, the alarm may not play automatically.
+1. **Install Tampermonkey**: Get the extension for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd), or [Safari](https://apps.apple.com/us/app/tampermonkey/id1482490089). You may need to enable developer mode: [For users of the Tampermonkey extension in a Chrome-based browser, enabling Developer Mode is a requirement introduced with Manifest V3 updates.](https://www.tampermonkey.net/faq.php?locale=en#Q209)
+2. **Install Main Script**: [Click to install](https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm.user.js).
+3. **Install Test Script** if you want to make sure the main script works (optional): [Click to install](https://github.com/zpatronus/iclicker_join_class_alarm/raw/refs/heads/main/iclicker_join_class_alarm_test.user.js). Please turn it off after testing or it might interfere with the main script.
+4. **Usage**: On the course page, enable "Monitor Attendance." If testing, you'll see a notification immediately. Once attendance is detected, it will auto join into the class. Turn the monitor off during quizzes to prevent page refresh.
 
 ## Compatibility
 
-The following combinations have been tested:
+Tested on:
 
-- Ubuntu 20.04
-  - Chrome
-  - Edge
-- Windows
-  - Edge
-- MacOS
-  - Chrome
+- Ubuntu 20.04: Chrome, Edge
+- Windows: Edge
+- MacOS: Chrome
 
 ## Changelog
 
-2.0
-
-- The script will auto join the class.
-
-1.9
-
-- Use meta data to auto update
-
-1.8
-
-- Add auto update
-
-1.7
-
-- Fix toggle logic.
-
-1.6
-
-- Add toggle to control monitor and alarm.
+- **2.0**: Auto-joins class.
+- **1.9**: Metadata for auto-update.
+- **1.8**: Added auto-update.
+- **1.7**: Fixed toggle logic.
+- **1.6**: Added monitor and alarm toggle.
 
 ## License
 
-This project is licensed under the MIT License.
+Licensed under the MIT License.
